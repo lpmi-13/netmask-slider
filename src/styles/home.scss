@@ -1,23 +1,6 @@
 @import './global.scss';
 @import './mixins.scss';
 
-.begin-button {
-    font-size: 2rem;
-    font-weight: 650;
-    padding: 0.5em .85em;
-    text-transform: uppercase;
-    background-color: #00DA9F;
-    border-radius: 2em;
-}
-
-.home-IP {
-    font-size: 2.35rem;
-
-    @include respond-to("small") {
-        font-size: 4rem;
-    }
-}
-
 .instructions {
     font-size: 1.25rem;
     text-align: center;
@@ -25,5 +8,90 @@
 
     @include respond-to("small") {
         font-size: 2.25rem;
+    }
+}
+
+.main-game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ipAddress {
+    font-size: 2.65rem;
+
+    @include respond-to("small") {
+        font-size: 6rem;
+    }
+}
+
+.ipAddressInBinary {
+    font-size: 1.2rem;
+
+    @include respond-to("small") {
+        font-size: 2.3rem;
+    }
+
+    @include respond-to("large") {
+        font-size: 3.5rem;
+    }
+}
+
+.boundary {
+    overflow: hidden;
+    height: 30%;
+    width: 100%;
+}
+
+.swipeContainer {
+    position: relative;
+    font-size: 1.25rem;
+
+    @include respond-to("small") {
+        font-size: 2rem;
+    }
+
+    @include respond-to("medium") {
+        font-size: 2.3rem;
+    }
+}
+
+
+
+.horizontal-slider {
+    width: 100%;
+    color: black;
+    position: absolute;
+    z-index: 10;
+    top: -20px;
+}
+
+.netMaskInBinary {
+    position: absolute;
+}
+
+.example-thumb {
+    font-size: 0;
+    text-align: center;
+    background-color: black;
+    color: black;
+    cursor: none;
+}
+
+.example-track {
+    height: 3em;
+    top: -2em;
+}
+
+.netmask {
+    font-size: 2.6rem;
+
+    @include respond-to("small") {
+        font-size: 3.6;
+    }
+
+    @include respond-to("medium") {
+        font-size: 4.6rem;
     }
 }
