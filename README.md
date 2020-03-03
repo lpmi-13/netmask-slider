@@ -23,7 +23,7 @@ HostMax:   192.168.0.1           11000000.10101000.00000000.00000001
 ```
 
 
-...that means the the netmask specifies that one and only one host is at this IP
+...that means the netmask specifies that one and only one host is at this IP
 address. Because it's all 1's (32 of them, as you can see), that yields a CIDR range
 of 192.168.0.1/32.
 
@@ -48,4 +48,4 @@ HostMax:   192.168.0.254         11000000.10101000.00000000 .11111110
 
 Just a single page that shows a randomly generated IP address, and the ability to
 slide the netmask 1's to the right. As you slide, you can see how it affects the
-CIDR range, the Netmask in octal format, and the number of possible hosts.
+CIDR range, the Netmask in decimal format, and the number of possible hosts.
