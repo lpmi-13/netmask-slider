@@ -49,3 +49,7 @@ HostMax:   192.168.0.254         11000000.10101000.00000000 .11111110
 Just a single page that shows a randomly generated IP address, and the ability to
 slide the netmask 1's to the right. As you slide, you can see how it affects the
 CIDR range, the Netmask in decimal format, and the number of possible hosts.
+
+## local dev
+
+`$ npm start`
