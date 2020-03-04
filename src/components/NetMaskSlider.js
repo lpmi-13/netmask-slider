@@ -17,6 +17,8 @@ const NetMaskSlider = () => {
 
     const computeMaskFromSlider = (state) => {
 
+
+        console.log(state.valueNow);
         const withDots = createOnes(state.valueNow)
         
         const binaryNetMask = [
@@ -53,18 +55,17 @@ const NetMaskSlider = () => {
             <div className="netmask">
               {decimalNetMask}
             </div>
-            <div className="swipeContainer">
-              <div className="netmaskInBinary">
-                  {netMask}
-              </div>
-              <ReactSlider
-                  className="horizontal-slider"
-                  max={32}
-                  thumbClassName="example-thumb"
-                  trackClassName="example-track"
-                  renderThumb={(props, state) => <div {...props}>{computeMaskFromSlider(state)}</div>}
-              />
+            <div className="netmaskInBinary">
+                {netMask}
             </div>
+            <ReactSlider
+                className="horizontal-slider"
+                max={32}
+                invert
+                thumbClassName="example-thumb"
+                trackClassName="example-track"
+                renderThumb={(props, state) => <div {...props}>{computeMaskFromSlider(state)}</div>}
+            />
         </div>
     )
 }

@@ -38,34 +38,14 @@
     }
 }
 
-.boundary {
-    overflow: hidden;
-    height: 30%;
-    width: 100%;
-}
-
-.swipeContainer {
-    position: relative;
-    font-size: 0.9 rem;
-
-    @include respond-to("small") {
-        font-size: 2rem;
-    }
-
-    @include respond-to("medium") {
-        font-size: 2.3rem;
-    }
-}
-
-
-
 .horizontal-slider {
     width: 100%;
-    color: black;
-    position: absolute;
-    z-index: 10;
-    top: -20px;
-    height: 85px;
+    max-width: 500px;
+    height: 50px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: grey;
+    border-image: initial;;
 }
 
 .netMaskInBinary {
@@ -73,16 +53,25 @@
 }
 
 .example-thumb {
-    font-size: 0;
+    height: 25px;
+    line-height: 25px;
+    width: 20em;
     text-align: center;
-    background-color: black;
-    color: black;
-    cursor: none;
+    background-color: red;
+    color: #fff;
+    border-radius: 50%;
+    top: 1.5em;
+    background-image: url('../images/right-arrow.png');
+    background-position: center;
+    background-size: cover;
+    // text-align: center;
+    // background-color: black;
+    // color: black;
+    // cursor: none;
 }
 
 .example-track {
-    height: 3em;
-    top: -2em;
+    // height: 3em;
 }
 
 .netmask {
