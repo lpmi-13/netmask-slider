@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import ReactSlider from 'react-slider';
 
 
@@ -51,6 +51,7 @@ const NetMaskSlider = () => {
     const [decimalNetMask, setDecimalNetMask] = useState('0.0.0.0');
 
     return (
+        <Fragment>
         <div className="main-game">
             <div className="netmask">
               {decimalNetMask}
@@ -58,15 +59,15 @@ const NetMaskSlider = () => {
             <div className="netmaskInBinary">
                 {netMask}
             </div>
+        </div>
             <ReactSlider
                 className="horizontal-slider"
                 max={32}
-                invert
                 thumbClassName="example-thumb"
                 trackClassName="example-track"
                 renderThumb={(props, state) => <div {...props}>{computeMaskFromSlider(state)}</div>}
             />
-        </div>
+            </Fragment>
     )
 }
 
