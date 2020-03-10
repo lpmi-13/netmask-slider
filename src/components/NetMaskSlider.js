@@ -14,11 +14,11 @@ const thirdRange = range => range.slice(16, 24).join('');
 const fourthRange = range => range.slice(24, 33).join('');
 
 const NetMaskSlider = () => {
-
+    
     const computeMaskFromSlider = (state) => {
-
-
-        console.log(state.valueNow);
+        
+        setHostNumber( Math.pow(2, (32 - state.valueNow)) - 2);
+ 
         const withDots = createOnes(state.valueNow)
         
         const binaryNetMask = [
@@ -49,6 +49,7 @@ const NetMaskSlider = () => {
 
     const [netMask, setNetMask] = useState('');
     const [decimalNetMask, setDecimalNetMask] = useState('0.0.0.0');
+    const [hostNumber, setHostNumber] = useState(0);
 
     return (
         <Fragment>
@@ -58,6 +59,9 @@ const NetMaskSlider = () => {
             </div>
             <div className="netmaskInBinary">
                 {netMask}
+            </div>
+            <div className="hostNumber">
+                {`number of hosts: ${hostNumber}`}
             </div>
         </div>
             <ReactSlider
