@@ -16,6 +16,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @include respond-to("small") {
+        min-width: 77%;
+    }
 }
 
 .ipAddress {
@@ -26,7 +30,7 @@
     }
 }
 
-.ipAddressInBinary {
+.ipAddressInBinary, .netmaskInBinary {
     font-size: 0.9rem;
 
     @include respond-to("small") {
@@ -48,22 +52,57 @@
     border-image: initial;;
 }
 
-.netMaskInBinary {
-    position: absolute;
+.hostNumber {
+    min-width: 100%;
+}
+
+.numberOfHosts, .numberOfAddresses {
+    text-align: right;
+}
+
+.hosts, .addresses, .network {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include respond-to("small") {
+        margin: 0 7em;
+    }
 }
 
 .example-thumb {
+    // position: absolute;
     height: 25px;
     line-height: 25px;
     width: 2em;
     text-align: center;
-    background-color: red;
+    background-color: #00DA9F;
     border-radius: 50%;
     top: 1.5em;
-    // text-align: center;
-    // background-color: black;
-    // color: black;
-    // cursor: none;
+
+    &::before {
+        margin-right: 2.5em;
+        font-size: 2rem;
+        content: '>';
+    }
+
+    &::after {
+        margin-left: -5em;
+        font-size: 2rem;
+        content: '<';
+    }
+
+    @include respond-to("small") {
+      &::before {
+          margin-right: 1em;
+          font-size: 4rem;
+      }
+
+      &::after {
+          margin-left: -3em;
+          font-size: 4rem;
+      }
+    }
 }
 
 .netmask {

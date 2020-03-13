@@ -32,7 +32,7 @@ const Home = () => {
       </span>
       <GenerateIp onGenerateIp={handleGenerateIp} />
       <RandomIp ipInBinary={randomIp}/>
-      <NetmaskSlider/>
+      <NetmaskSlider ipInBinary={randomIp}/>
     </Layout>
   )
 }

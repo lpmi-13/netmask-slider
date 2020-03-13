@@ -1,7 +1,9 @@
 @import './variables.scss';
+@import './mixins.scss';
 
 .generateButton {
     font-size: 1.2rem;
+    font-weight: 800;
     border-radius: 20px;
     box-shadow: 0px 14px 25px $tech-green;
     padding: 1.25em;
@@ -10,12 +12,17 @@
     text-align: center;
     margin: 0 1.25em;
 
+
     button {
         height: 100%;
         width: 100%;
         background: black;
         border: none;
         color: $tech-green;
+
+        @include respond-to("small") {
+            font-size: 1.5rem;
+        }
     }
 
     button:focus {
