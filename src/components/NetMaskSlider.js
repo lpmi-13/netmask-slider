@@ -24,12 +24,10 @@ const NetMaskSlider = ({ ipInBinary }) => {
 
         // this is hacky but will keep for now...ip address in binary without dots
         const ipSequenceInBinary = [...firstOctet.split(''), ...secondOctet.split(''), ...thirdOctet.split(''), ...fourthOctet.split('')];
-        console.log(ipSequenceInBinary);
         
         const withZeroes = ipSequenceInBinary.slice();
         
         withZeroes.splice(state.valueNow, 32 - state.valueNow, ...createZeroes(state.valueNow));
-        console.log(withZeroes);
 
         // now we can set the network address in digital and add the dots between
         const finalNetworkAddress = [
