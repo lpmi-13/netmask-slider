@@ -2,16 +2,20 @@
 @import './mixins.scss';
 
 .generateButton {
-    font-size: 1.2rem;
     font-weight: 800;
     border-radius: 20px;
     box-shadow: 0px 14px 25px $tech-green;
     padding: 1.25em;
-    max-width: 7em;
-    min-width: 7em;
+    max-width: 4em;
+    min-width: 4em;
     text-align: center;
     margin: 0 1.25em;
 
+    @include respond-to("small") {
+        max-height: 4em;
+        max-width: 7em;
+        min-width: 7em
+    }
 
     button {
         height: 100%;
@@ -19,6 +23,7 @@
         background: black;
         border: none;
         color: $tech-green;
+        font-size: 1rem;
 
         @include respond-to("small") {
             font-size: 1.5rem;

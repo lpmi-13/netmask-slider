@@ -1,4 +1,5 @@
 import React, { useState, Fragment } from 'react';
+import styled from 'styled-components';
 import ReactSlider from 'react-slider';
 
 // this is to create the netmask of 1's up to a certain place
@@ -15,6 +16,9 @@ const firstRange = range => range.slice(0, 8).join('');
 const secondRange = range => range.slice(8, 16).join('');
 const thirdRange = range => range.slice(16, 24).join('');
 const fourthRange = range => range.slice(24, 33).join('');
+const StyledTrack = styled.div`
+    background: ${props => props.index === 1 ? '#ddd' : '#00DA9F'};
+`;
 
 const NetMaskSlider = ({ ipInBinary }) => {
     
@@ -89,6 +93,11 @@ const NetMaskSlider = ({ ipInBinary }) => {
     const [addressNumber, setAddressNumber] = useState(0);
     const [networkAddress, setNetworkAddress] = useState(0);
 
+   
+
+
+const Track = (props, state) => <StyledTrack {...props} index={state.index} />;
+ 
     return (
         <Fragment>
         <div className="main-game">
@@ -131,6 +140,7 @@ const NetMaskSlider = ({ ipInBinary }) => {
                 thumbClassName="example-thumb"
                 trackClassName="example-track"
                 renderThumb={(props, state) => <div {...props}>{computeMaskFromSlider(state)}</div>}
+                renderTrack={Track}
             />
             </Fragment>
     )

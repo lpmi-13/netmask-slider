@@ -16,6 +16,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 1.75em;
 
     @include respond-to("small") {
         min-width: 77%;
@@ -23,15 +24,24 @@
 }
 
 .ipAddress {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
+    margin-top: 0.5em;
+
 
     @include respond-to("small") {
-        font-size: 6rem;
+        font-size: 3.6;
+        margin-top: 0;
+    }
+
+    @include respond-to("medium") {
+        font-size: 4.6rem;
+        margin-top: 0;
     }
 }
 
 .ipAddressInBinary, .netmaskInBinary {
     font-size: 0.9rem;
+    margin-bottom: 0.5em;
 
     @include respond-to("small") {
         font-size: 2.3rem;
@@ -43,13 +53,9 @@
 }
 
 .horizontal-slider {
-    width: 100%;
+    width: 90%;
     max-width: 500px;
     height: 50px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: grey;
-    border-image: initial;;
 }
 
 .hostNumber {
@@ -73,38 +79,18 @@
 }
 
 .example-thumb {
-    // position: absolute;
-    height: 25px;
-    line-height: 25px;
-    width: 2em;
-    text-align: center;
-    background-color: #00DA9F;
+    height: 2.5em;
+    width: 2.5em;
     border-radius: 50%;
-    top: 1.5em;
+    top: -1em;
+    border: solid;
+    border-color: #008A64;
+    border-width: .5em;
+    background: #00DA9F;
+}
 
-    &::before {
-        margin-right: 2.5em;
-        font-size: 2rem;
-        content: '>';
-    }
-
-    &::after {
-        margin-left: -5em;
-        font-size: 2rem;
-        content: '<';
-    }
-
-    @include respond-to("small") {
-      &::before {
-          margin-right: 1em;
-          font-size: 4rem;
-      }
-
-      &::after {
-          margin-left: -3em;
-          font-size: 4rem;
-      }
-    }
+.example-track {
+    height: 1.25em;
 }
 
 .netmask {
