@@ -6,10 +6,12 @@
     border-radius: 20px;
     box-shadow: 0px 14px 25px $tech-green;
     padding: 1.25em;
-    max-width: 4em;
-    min-width: 4em;
+    max-height: 3em;
+    min-height: 3em;
+    max-width: 6em;
+    min-width: 6em;
     text-align: center;
-    margin: 0 1.25em;
+    padding: 0.5em;
 
     @include respond-to("small") {
         max-height: 4em;

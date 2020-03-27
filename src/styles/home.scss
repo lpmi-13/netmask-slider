@@ -71,18 +71,27 @@
 }
 
 .example-thumb {
-    height: 2.5em;
-    width: 2.5em;
+    height: 1.5em;
+    width: 1.5em;
     border-radius: 50%;
     top: -1em;
     border: solid;
     border-color: #008A64;
     border-width: .5em;
     background: #00DA9F;
+
+    @include respond-to("small") {
+      height: 2.5em;
+      width: 2.5em;
+    }
 }
 
 .example-track {
-    height: 1.25em;
+    height: 0.65em;
+
+    @include respond-to("small") {
+      height: 1.25em;
+    }
 }
 
 .netmask {
