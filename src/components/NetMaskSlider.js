@@ -80,9 +80,9 @@ const NetMaskSlider = ({ ipInBinary }) => {
             binaryToDecimal(fourthRange(withDots))
         ];
     
-        setDecimalNetMask(decimalNetMask.join('') + calculateCidr(state.valueNow));
+        setDecimalNetMask(decimalNetMask.join(''));
         setNetMask(binaryNetMask.join(''));
-        setNetworkAddress(finalNetworkAddress.join(''));
+        setNetworkAddress(finalNetworkAddress.join('') + calculateCidr(state.valueNow));
     
         return;
     }
