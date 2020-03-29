@@ -16,6 +16,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test:cypress": "BROWSER=none start-server-and-test start http://localhost:3000 cy:open",
+    "test:headless": "BROWSER=none start-server-and-test start http://localhost:3000 cy:run",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -35,6 +39,11 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^4.13.0"
+    "@testing-library/cypress": "^6.0.0",
+    "axe-core": "^3.5.2",
+    "cypress": "^4.2.0",
+    "cypress-axe": "^0.6.0",
+    "node-sass": "^4.13.0",
+    "start-server-and-test": "^1.10.11"
   }
 }

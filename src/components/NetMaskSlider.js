@@ -135,6 +135,7 @@ const Track = (props, state) => <StyledTrack {...props} index={state.index} />;
             </div>
         </div>
             <ReactSlider
+                ariaLabel="netmask slider"
                 className="horizontal-slider"
                 max={32}
                 thumbClassName="example-thumb"

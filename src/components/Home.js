@@ -27,9 +27,9 @@ const Home = () => {
 
   return (
     <Layout>
-      <span className="instructions">
+      <h1 className="instructions">
         Slide the netmask to the right and watch stuff change!
-      </span>
+      </h1>
       <GenerateIp onGenerateIp={handleGenerateIp} />
       <RandomIp ipInBinary={randomIp}/>
       <NetmaskSlider ipInBinary={randomIp}/>
