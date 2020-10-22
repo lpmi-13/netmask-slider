@@ -12,10 +12,8 @@ const binaryToDecimal = (binary) => parseInt(binary, 2);
 
 const calculateCidr = index => `/${index}`
 
-const firstRange = range => range.slice(0, 8).join('');
-const secondRange = range => range.slice(8, 16).join('');
-const thirdRange = range => range.slice(16, 24).join('');
-const fourthRange = range => range.slice(24, 33).join('');
+const createRange = (range, start, end) => range.slice(start, end).join('');
+
 const StyledTrack = styled.div`
     background: ${props => props.index === 1 ? '#ddd' : '#00DA9F'};
 `;
@@ -35,13 +33,13 @@ const NetMaskSlider = ({ ipInBinary }) => {
 
         // now we can set the network address in digital and add the dots between
         const finalNetworkAddress = [
-            binaryToDecimal(firstRange(withZeroes)),
+            binaryToDecimal(createRange(withZeroes, 0, 8)),
             '.',
-            binaryToDecimal(secondRange(withZeroes)),
+            binaryToDecimal(createRange(withZeroes, 8, 16)),
             '.',
-            binaryToDecimal(thirdRange(withZeroes)),
+            binaryToDecimal(createRange(withZeroes, 16, 24)),
             '.',
-            binaryToDecimal(fourthRange(withZeroes))
+            binaryToDecimal(createRange(withZeroes, 24, 33))
         ];
 
         // set this to 1 if it's 0, since below, anything to the power of 0 is 1
@@ -61,23 +59,23 @@ const NetMaskSlider = ({ ipInBinary }) => {
         const withDots = createOnes(state.valueNow)
         
         const binaryNetMask = [
-            firstRange(withDots),
+            createRange(withDots, 0, 8),
             '.',
-            secondRange(withDots),
+            createRange(withDots, 8, 16),
             '.',
-            thirdRange(withDots),
+            createRange(withDots, 16, 24),
             '.',
-            fourthRange(withDots)
+            createRange(withDots, 24, 33)
         ];
 
         const decimalNetMask = [
-            binaryToDecimal(firstRange(withDots)),
+            binaryToDecimal(createRange(withDots, 0, 8)),
             '.',
-            binaryToDecimal(secondRange(withDots)),
+            binaryToDecimal(createRange(withDots, 8, 16)),
             '.',
-            binaryToDecimal(thirdRange(withDots)),
+            binaryToDecimal(createRange(withDots, 16, 24)),
             '.',
-            binaryToDecimal(fourthRange(withDots))
+            binaryToDecimal(createRange(withDots, 24, 33))
         ];
     
         setDecimalNetMask(decimalNetMask.join(''));
